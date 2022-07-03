@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>afxPreview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/topbar.css">
+
+</head>
+<body>
+
+
+<body>
+<!-- top bar -->
+
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<!-- drag -->
+<div id="grid" class="row">
+
+    <div id="items-grid" class="list-group col">
+        <div id="1" data-id="1" class="list-group-item"><img src="https://picsum.photos/200/200?image=1062"></div>
+        <div id="2" data-id="2" class="list-group-item"><img src="https://picsum.photos/200/200?image=1032"></div>
+        <div id="3" data-id="3" class="list-group-item"><img src="https://picsum.photos/200/200?image=1060"></div>
+        <div id="4" data-id="4" class="list-group-item"><img src="https://picsum.photos/200/200?image=1050"></div>
+        <div id="5" data-id="5" class="list-group-item"><img src="https://picsum.photos/200/200?image=1015"></div>
+        <div id="6" data-id="6" class="list-group-item"><img src="https://picsum.photos/200/200?image=1066"></div>
+        <div id="7" data-id="7" class="list-group-item"><img src="https://picsum.photos/200/200?image=1045"></div>
+        <div id="8" data-id="8" class="list-group-item"><img src="https://picsum.photos/200/200?image=1082"></div>
+        <div id="9" data-id="9" class="list-group-item"><img src="https://picsum.photos/200/200?image=1022"></div>
+        <div id="10" data-id="10" class="list-group-item"><img src="https://picsum.photos/200/200?image=1005"></div>
+        <div id="11" data-id="11" class="list-group-item"><img src="https://picsum.photos/200/200?image=1062"></div>
+        <div id="12" data-id="12" class="list-group-item"><img src="https://picsum.photos/200/200?image=1032"></div>
+  </div>
+
+<!-- fixed -->
+
+  <div id="items-grid" class="list-group col" style="margin-top:2px;">
+      <div id="21" class="list-group-post"><img src="https://picsum.photos/200/200?image=1062"></div>
+      <div id="22"  class="list-group-post"><img src="https://picsum.photos/200/200?image=1032"></div>
+      <div id="23"  class="list-group-post"><img src="https://picsum.photos/200/200?image=1060"></div>
+      <div id="24"  class="list-group-post"><img src="https://picsum.photos/200/200?image=1050"></div>
+      <div id="25" class="list-group-post"><img src="https://picsum.photos/200/200?image=1015"></div>
+      <div id="26" class="list-group-post"><img src="https://picsum.photos/200/200?image=1066"></div>
+      <div id="27" class="list-group-post"><img src="https://picsum.photos/200/200?image=1045"></div>
+      <div id="28" class="list-group-post"><img src="https://picsum.photos/200/200?image=1082"></div>
+      <div id="29"  class="list-group-post"><img src="https://picsum.photos/200/200?image=1022"></div>
+      <div id="210" class="list-group-post"><img src="https://picsum.photos/200/200?image=1005"></div>
+      <div id="211"  class="list-group-post"><img src="https://picsum.photos/200/200?image=1062"></div>
+      <div id="212"  class="list-group-post"><img src="https://picsum.photos/200/200?image=1032"></div>
+</div>
+
+
+
+</div>
+
+
+
+  <script src="https://unpkg.com/sortablejs-make/Sortable.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+
+  <script type="text/javascript">
+
+
+    // Grid Sortable
+
+    $('#items-grid').sortable({
+        group: 'list',
+        fixed: 1,
+        animation: 200,
+        ghostClass: 'ghost',
+        onSort: reportActivity,
+    });
+
+    // Arrays of "data-id"
+    $('#get-order').click(function() {
+        var sort1 = $('#items-1').sortable('toArray');
+        console.log(sort1);
+        var sort2 = $('#items-2').sortable('toArray');
+        console.log(sort2);
+    });
+
+    // Report when the sort order has changed
+    function reportActivity() {
+        console.log('The sort order has changed');
+    };
+
+
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+    </script>
+
+</body>
+</html>
